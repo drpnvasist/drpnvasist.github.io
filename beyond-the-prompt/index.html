@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="A ready reference for doctoral researchers on using AI ethically at every stage of the research journey, from first idea to peer review.">
+<meta name="description" content="A ready reference for doctoral students on using AI ethically at every stage of the research journey, from first idea to peer review.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Beyond the Prompt</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -407,8 +407,9 @@ footer small a{color:var(--sand)}
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">A ready reference for doctoral researchers</p>
-      <h1 style="margin-top:1.2rem">Beyond the Prompt<em>Ethics and human judgement in AI-assisted research</em></h1>
+      <p class="eyebrow">IIM Kozhikode Skill-Building Series · Oct 2026</p>
+      <p class="eyebrow" style="margin-top:.4rem">A ready reference for doctoral students</p>
+      <h1 style="margin-top:1.2rem">Beyond the Prompt<em>Ethics and human judgement in <span style="white-space:nowrap">AI-assisted</span> research</em></h1>
       <p class="sub">What publishers and journals ask of you when you use generative AI, stage by stage, from the first idea to peer review. Use it as a map, and check your target journal before you submit.</p>
       <div class="ctas" id="heroCtas">
         <button class="pill primary" type="button" data-tour-start>Take a tour <span class="arrow"></span></button>
@@ -859,10 +860,10 @@ footer small a{color:var(--sand)}
     {k:'refs',l:'Formatting references',tag:'Usually not',cls:'',h:'Usually outside the disclosure rule',p:'Reference managers and formatting tools are generally treated as assistive. You are still responsible for every reference being real and correct.',d:['Check each formatted reference against its source']},
     {k:'rewrite',l:'Rewriting or restructuring my sentences',tag:'Disclose',cls:'go',h:'Disclose it',p:'Once a tool makes substantive changes to sentence structure or organisation, the expectation is that you declare it.',d:['Name the tool and version','State that it was used for editing, and its scope','Keep a before-and-after or tracked-changes file']},
     {k:'gen',l:'Generating text, ideas or analysis',tag:'Disclose',cls:'go',h:'Disclose, and verify every output',p:'Generative use should be disclosed. Where AI materially contributed to analysis or evidence, provide records that let others reproduce the workflow.',d:['Name the tool and version','State the purpose and the stage of research','Describe how you checked the output','Keep prompts and settings in your use log']},
-    {k:'lit',l:'Searching or summarising literature',tag:'Disclose',cls:'go',h:'Disclose, and read the originals',p:'Literature support is usually allowed if declared and verified. Summaries should be checked against the papers themselves, and references can be fabricated.',d:['Read every source you cite','Archive prompts and retrieval logs','Say in your methods how the tool shaped the search']},
+    {k:'lit',l:'Searching or summarising literature',tag:'Disclose',cls:'go',h:'Disclose, and read the originals',p:'Literature support is usually allowed if declared and verified. Summaries should be checked against the papers themselves, since references can be fabricated.',d:['Read every source you cite','Archive prompts and retrieval logs','Say in your methods how the tool shaped the search']},
     {k:'code',l:'Writing code or running analysis',tag:'Disclose',cls:'go',h:'Disclose, and re-run outside the chat',p:'Coding and analysis help is usually allowed with declaration and verification. Do not run confirmatory analyses inside a chat platform.',d:['Re-run extracted code in R, Python, SPSS or Stata','Check defaults such as one- versus two-tailed tests','Log model version and settings']},
     {k:'img',l:'Creating images or figures',tag:'Depends',cls:'',h:'It depends on what the image claims',p:'Explanatory diagrams may be acceptable with disclosure. Data visualisations should come directly from your data. Primary research images should not be generated or altered.',d:['Disclose any AI-assisted figure','Do not alter scans, blots, microscopy or similar evidence']},
-    {k:'review',l:'Helping me review someone else’s manuscript',tag:'Stop',cls:'stop',h:'Generally not permitted',p:'Some journals prohibit AI in drafting or assisting reviews, and journals generally treat manuscripts as confidential. Some allow light language refinement, disclosed to the editor.',d:['Do not upload a manuscript or your notes on it to a public AI tool','Read the journal’s reviewer guidelines','If language help is allowed, tell the editor']}
+    {k:'review',l:'Helping me review someone else’s manuscript',tag:'Stop',cls:'stop',h:'Generally not permitted',p:'Some journals prohibit AI in drafting or assisting reviews, and journals generally treat manuscripts as confidential. Some allow light language refinement, disclosed to the editor.',d:['Do not upload a manuscript or your notes on it to a public AI tool','Read the journal’s reviewer guidelines','If language help is needed, check with the editor before using any tool']}
   ];
   const opts=$('#opts'), verdict=$('#verdict');
   opts.innerHTML=O.map(o=>`<button class="opt" type="button" aria-pressed="false" data-k="${o.k}" id="op-${o.k}">${o.l}</button>`).join('');
