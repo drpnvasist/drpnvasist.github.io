@@ -39,19 +39,27 @@ main { flex: 1; }
 h1 { font-family: var(--serif); font-weight: 400; text-transform: uppercase; line-height: 1; font-size: clamp(2.75rem, 6.5vw, 5.375rem); color: var(--bronze); margin-top: 1rem; }
 .intro { margin-top: 1.5rem; max-width: 46ch; color: var(--sage); }
 
-.grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; padding-bottom: 8rem; }
+.grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; padding-bottom: 8rem; }
 .tile { height: 100%; display: flex; flex-direction: column; text-decoration: none; background: var(--cream);
-  border-radius: var(--radius-lg); padding: 1.25rem; min-height: 13rem; transition: background .3s var(--ease), color .3s var(--ease); }
-.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; color: var(--sage); }
-.tile-title { font-family: var(--serif); font-weight: 300; font-size: 1.75rem; line-height: 1.15; letter-spacing: .01em; margin-top: auto; padding-top: 2rem; }
+  border-radius: var(--radius-lg); overflow: hidden; transition: background .3s var(--ease), color .3s var(--ease); }
+.tile-media { display: block; background: var(--pine); padding: 1.25rem 1.5rem 1.75rem 2.5rem; overflow: hidden; }
+.tile-fig { display: block; position: relative; }
+.tile-fig img { display: block; width: 100%; height: auto; object-fit: cover; transition: transform .5s var(--ease); }
+.tile-fig .main { aspect-ratio: 4 / 3.4; clip-path: url(#canopy1); }
+.tile-fig .small { position: absolute; width: 42%; left: -12%; bottom: -8%; aspect-ratio: 1 / 1; clip-path: url(#canopy3); }
+.tile-body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem; }
+.tile-date { font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; color: var(--sage); }
+.tile-title { font-family: var(--serif); font-weight: 300; font-size: 1.75rem; line-height: 1.15; letter-spacing: .01em; margin-top: .5rem; }
 .tile-line { margin-top: .5rem; font-size: .95rem; color: var(--sage); }
-.tile-go { margin-top: 1.25rem; display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; }
+.tile-go { margin-top: auto; padding-top: 1.25rem; display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; }
 .arr { display: inline-block; width: 1.5rem; height: 1px; background: currentColor; position: relative; transition: width .3s var(--ease); }
 .arr::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
 .tile:hover, .tile:focus-visible { background: var(--pine); color: var(--parchment); }
-.tile:hover .tile-top, .tile:hover .tile-line, .tile:focus-visible .tile-top, .tile:focus-visible .tile-line { color: var(--sand); }
+.tile:hover .tile-date, .tile:hover .tile-line, .tile:focus-visible .tile-date, .tile:focus-visible .tile-line { color: var(--sand); }
 .tile:hover .tile-go, .tile:focus-visible .tile-go { color: var(--lime); }
 .tile:hover .arr { width: 2.25rem; }
+.tile:hover .tile-fig .main { transform: scale(1.02); }
+@media (prefers-reduced-motion: reduce) { .tile-fig img, .arr { transition: none; } }
 
 footer { margin-top: auto; background: var(--pine-deep); color: var(--sand); padding: 2rem 0; font-size: .875rem; }
 footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
@@ -61,11 +69,18 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
   header.wrap { padding-top: 3.5rem; padding-bottom: 2rem; }
   .nav { padding-left: 1rem; }
   .nav-name { font-size: 1.05rem; }
-  .tile { min-height: 0; }
 }
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Canopy masks, same shapes as the Beyond the Prompt page -->
+    <clipPath id="canopy1" clipPathUnits="objectBoundingBox"><path d="M0.12,0.005 L0.95,0.055 Q1,0.06 0.995,0.11 L0.945,0.95 Q0.94,1 0.89,0.995 L0.05,0.885 Q0,0.878 0.004,0.83 L0.07,0.05 Q0.075,0.002 0.12,0.005 Z"/></clipPath>
+    <clipPath id="canopy3" clipPathUnits="objectBoundingBox"><path d="M0.03,0.17 L0.5,0.012 Q0.55,0 0.6,0.015 L0.965,0.11 Q1,0.12 0.997,0.16 L0.925,0.955 Q0.92,1 0.875,0.997 L0.115,0.94 Q0.075,0.935 0.072,0.895 L0.004,0.22 Q0,0.18 0.03,0.17 Z"/></clipPath>
+  </defs>
+</svg>
 
 <nav class="nav" aria-label="Primary">
   <a class="nav-name" href="/">Dr. Pramukh N. Vasist</a>
@@ -82,16 +97,24 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
   <ul class="grid">
     <!--
       To add an artifact: put its page in a folder at the site root
-      (for example /my-new-page/index.html), then copy one <li> block
-      below and change the link, label, year, title and one-line description.
+      (for example /my-new-page/index.html), save two photos in
+      /artifacts/img/ (a main one about 720px wide and a square one about
+      420px), then copy one <li>
+      block below and change the link, image, date, title and line.
       Newest first.
     -->
     <li>
       <a class="tile" href="/beyond-the-prompt/">
-        <span class="tile-top"><span>Session</span><span>2026</span></span>
-        <span class="tile-title">Beyond the Prompt</span>
-        <span class="tile-line">Ethics of AI for teaching and research.</span>
-        <span class="tile-go">Open <span class="arr" aria-hidden="true"></span></span>
+        <span class="tile-media"><span class="tile-fig">
+          <img class="main" src="img/btp-room.jpg" alt="" loading="lazy" width="720" height="480">
+          <img class="small" src="img/btp-arch.jpg" alt="" loading="lazy" width="420" height="420">
+        </span></span>
+        <span class="tile-body">
+          <span class="tile-date">Oct 2026</span>
+          <span class="tile-title">Beyond the Prompt</span>
+          <span class="tile-line">Ethics of AI for teaching and research.</span>
+          <span class="tile-go">Open <span class="arr" aria-hidden="true"></span></span>
+        </span>
       </a>
     </li>
   </ul>
