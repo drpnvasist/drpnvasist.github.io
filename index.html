@@ -184,6 +184,22 @@ footer .pill { --ink: var(--parchment); --surface: var(--pine-deep); }
   .row > :last-child:not(:nth-child(2)) { grid-column: 2; justify-self: start; }
   .nav { padding-left: 1rem; }
   }
+
+/* ── Mobile menu ── */
+.nav-toggle { display: none; }
+@media (max-width: 960px) {
+  html:not(.js) .nav-links { display: flex; overflow-x: auto; gap: var(--space-4); }
+  .nav-toggle { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; margin-left: auto; margin-right: var(--space-2);
+    background: none; border: 1px solid rgba(204,191,153,.35); border-radius: var(--radius-pill); cursor: pointer; padding: 0 11px; }
+  .nav-toggle span { display: block; height: 1px; background: var(--parchment); transition: transform .3s var(--ease); }
+  .nav[data-open] .nav-toggle span:first-child { transform: translateY(3px) rotate(45deg); }
+  .nav[data-open] .nav-toggle span:last-child { transform: translateY(-3px) rotate(-45deg); }
+  .nav[data-open] .nav-links { display: flex; flex-direction: column; gap: 0; position: absolute; top: calc(100% + .5rem); left: 0; right: 0;
+    background: var(--pine); border-radius: var(--radius-lg); padding: .5rem 1.5rem; box-shadow: 0 18px 40px -24px rgba(0,0,0,.6); }
+  .nav[data-open] .nav-links li + li { border-top: 1px solid rgba(204,191,153,.2); }
+  .nav[data-open] .nav-links a { display: block; padding: .9rem 0; }
+  .nav-toggle:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+}
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -191,7 +207,8 @@ footer .pill { --ink: var(--parchment); --surface: var(--pine-deep); }
 
 <nav class="nav" aria-label="Primary">
   <a class="nav-name" href="#home">Home</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#education">Education</a></li>
     <li><a href="#interests">Research</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -521,6 +538,21 @@ var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (e
   entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.08 }) : null;
 document.querySelectorAll('.reveal').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+</script>
+<script>
+(function () {
+  var nav = document.querySelector('.nav'), btn = nav.querySelector('.nav-toggle'), links = nav.querySelector('.nav-links');
+  var set = function (open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) nav.setAttribute('data-open', ''); else nav.removeAttribute('data-open');
+  };
+  btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+  links.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.hasAttribute('data-open')) { set(false); btn.focus(); } });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) set(false); });
+  window.matchMedia('(min-width: 961px)').addEventListener('change', function (m) { if (m.matches) set(false); });
+})();
 </script>
 </body>
 </html>
