@@ -51,7 +51,8 @@ section { padding: var(--space-32) 0; }
   background: var(--pine); color: var(--parchment);
   border-radius: var(--radius-xl); padding: .65rem .75rem .65rem 1.5rem;
 }
-.nav-name { font-family: var(--serif); font-weight: 300; font-size: 1.25rem; letter-spacing: .02em; text-decoration: none; white-space: nowrap; }
+.nav-name { font-family: var(--sans); font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; color: var(--sand); transition: color .3s var(--ease); }
+.nav-name:hover { color: var(--parchment); }
 .nav-links { display: flex; gap: var(--space-5); list-style: none; }
 .nav-links a { font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; color: var(--sand); transition: color .3s var(--ease); }
 .nav-links a:hover { color: var(--parchment); }
@@ -61,7 +62,7 @@ section { padding: var(--space-32) 0; }
 .eyebrow { font-family: var(--sans); font-size: 1rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); display: flex; gap: var(--space-4); align-items: baseline; }
 .eyebrow .num { color: var(--accent); }
 .light .eyebrow .num { color: var(--muted); }
-.sec-title { font-family: var(--serif); font-weight: 400; text-transform: uppercase; line-height: 1; font-size: clamp(2.75rem, 6.5vw, 5.375rem); color: var(--accent); margin-top: var(--space-4); }
+.sec-title { font-family: var(--serif); font-weight: 400; text-transform: uppercase; line-height: 1; font-size: clamp(2rem, 6.5vw, 5.375rem); color: var(--accent); margin-top: var(--space-4); }
 .dark .sec-title { color: var(--sand); }
 .sec-head { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-16); align-items: end; margin-bottom: var(--space-16); }
 .sec-note { font-size: 1rem; color: var(--muted); max-width: 34ch; justify-self: end; }
@@ -86,7 +87,7 @@ section { padding: var(--space-32) 0; }
   /* soft canopy-like mask */
   border-radius: 44% 56% 48% 52% / 54% 44% 56% 46%;
 }
-.hero-name { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 5.5vw, 4.25rem); line-height: 1.05; letter-spacing: .01em; margin-top: var(--space-2); }
+.hero-name { font-family: var(--serif); font-weight: 300; font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.1; letter-spacing: .01em; margin-top: var(--space-2); white-space: nowrap; }
 .hero-name em { font-style: italic; color: var(--bronze); }
 .hero-role { margin-top: var(--space-2); color: var(--muted); }
 .hero-body { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-16); margin-top: var(--space-16); align-items: start; }
@@ -177,19 +178,19 @@ footer .pill { --ink: var(--parchment); --surface: var(--pine-deep); }
   .hero { padding-top: 7rem; }
   .hero-top { flex-direction: column; align-items: flex-start; gap: var(--space-5); }
   .portrait { width: 96px; height: 96px; }
+  .hero-name { font-size: clamp(1.1rem, 5.6vw, 1.75rem); }
   .stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
   .row { grid-template-columns: 2rem 1fr; }
   .row > :last-child:not(:nth-child(2)) { grid-column: 2; justify-self: start; }
   .nav { padding-left: 1rem; }
-  .nav-name { font-size: 1.05rem; }
-}
+  }
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
 <nav class="nav" aria-label="Primary">
-  <a class="nav-name" href="#home">Dr. Pramukh N. Vasist</a>
+  <a class="nav-name" href="#home">Home</a>
   <ul class="nav-links">
     <li><a href="#education">Education</a></li>
     <li><a href="#interests">Research</a></li>
