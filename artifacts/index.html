@@ -27,11 +27,13 @@ a:focus-visible { outline: 2px solid var(--pine); outline-offset: 3px; }
 .nav { position: sticky; top: 1rem; z-index: 10; margin: 1rem auto 0; width: min(1100px, calc(100% - 2rem));
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   background: var(--pine); color: var(--parchment); border-radius: var(--radius-xl); padding: .65rem .75rem .65rem 1.5rem; }
-.nav-name { font-family: var(--serif); font-weight: 300; font-size: 1.25rem; letter-spacing: .02em; text-decoration: none; white-space: nowrap; }
-.nav-back { font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; color: var(--parchment);
-  border: 1px solid var(--sage); border-radius: var(--radius-pill); padding: .55rem 1.1rem; white-space: nowrap; transition: background .3s var(--ease), color .3s var(--ease); }
-.nav-back:hover { background: var(--parchment); color: var(--pine); }
-.nav-back:focus-visible { outline-color: var(--lime); }
+.nav-name, .nav-links a { font-family: var(--sans); font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; color: var(--sand); transition: color .3s var(--ease); }
+.nav-name:hover, .nav-links a:hover { color: var(--parchment); }
+.nav-links { display: flex; gap: 1.25rem; list-style: none; }
+.nav-links a[aria-current="page"] { color: var(--parchment); }
+.nav-cta { font-size: .875rem; letter-spacing: .02em; text-transform: uppercase; text-decoration: none; color: var(--pine); background: var(--lime); border-radius: var(--radius-pill); padding: .55rem 1.1rem; white-space: nowrap; }
+.nav a:focus-visible { outline-color: var(--lime); }
+@media (max-width: 960px) { .nav-links { display: none; } }
 
 header.wrap { padding-top: 5rem; padding-bottom: 3rem; }
 main { flex: 1; }
@@ -68,7 +70,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
   .wrap { padding: 0 1rem; }
   header.wrap { padding-top: 3.5rem; padding-bottom: 2rem; }
   .nav { padding-left: 1rem; }
-  .nav-name { font-size: 1.05rem; }
 }
 </style>
 </head>
@@ -83,8 +84,16 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 </svg>
 
 <nav class="nav" aria-label="Primary">
-  <a class="nav-name" href="/">Dr. Pramukh N. Vasist</a>
-  <a class="nav-back" href="/">Home</a>
+  <a class="nav-name" href="/">Home</a>
+  <ul class="nav-links">
+    <li><a href="/#education">Education</a></li>
+    <li><a href="/#interests">Research</a></li>
+    <li><a href="/#publications">Publications</a></li>
+    <li><a href="/#teaching">Teaching</a></li>
+    <li><a href="/#awards">Awards</a></li>
+    <li><a href="/artifacts/" aria-current="page">Artifacts</a></li>
+  </ul>
+  <a class="nav-cta" href="https://tinyurl.com/yswn8jab" target="_blank" rel="noopener">Full CV</a>
 </nav>
 
 <header class="wrap">
