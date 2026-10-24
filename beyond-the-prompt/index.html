@@ -90,6 +90,8 @@ p{margin:0}
 .overlay a{display:flex; align-items:baseline; gap:1.25rem; padding:.55rem 0; text-decoration:none; font:300 clamp(1.6rem,4vw,2.4rem)/1.15 var(--serif); color:var(--sand); border-bottom:1px solid var(--dk-line); transition:color .3s var(--ease)}
 .overlay a small{font:400 .78rem/1 var(--sans); letter-spacing:.1em; color:var(--sage); min-width:2.2rem}
 .overlay a:hover{color:var(--lime); font-style:italic}
+.overlay .homepage{position:absolute; top:calc(env(safe-area-inset-top,0px) + 18px); left:calc(var(--gut) + 4px); display:inline-flex; align-items:center; gap:.9rem; min-height:2.75rem; padding:0 1.25rem; border:1px solid var(--sage); border-radius:var(--pill); border-bottom:1px solid var(--sage); color:var(--parchment); font:400 .82rem/1.2 var(--sans); font-style:normal; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; transition:background-color .3s var(--ease), color .3s var(--ease)}
+.overlay .homepage:hover{background:var(--parchment); color:var(--pine); font-style:normal}
 
 /* hero */
 .hero{background:var(--dk-bg); color:var(--dk-ink); padding-block:calc(env(safe-area-inset-top,0px) + 7.5rem) clamp(3.5rem,7vw,6rem); overflow:hidden}
@@ -302,6 +304,9 @@ footer small{font-size:.82rem; color:var(--sand); line-height:1.6}
 footer small a{color:var(--sand)}
 .footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:baseline}
 .footer-row .wm{font:300 1.6rem/1 var(--serif); font-style:italic; color:var(--parchment)}
+.footer-row .home-link{display:inline-flex; align-items:center; gap:.8rem; color:var(--parchment); text-decoration:none; font:400 .82rem/1 var(--sans); letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--sage); border-radius:var(--pill); padding:.8rem 1.1rem; transition:background-color .3s var(--ease), color .3s var(--ease)}
+.footer-row .home-link:hover{background:var(--parchment); color:var(--pine)}
+.footer-brand{display:grid; gap:1rem; justify-items:start}
 
 /* tour */
 .nav .tourbtn{background:none; border:0; color:var(--sand); font:400 .78rem/1 var(--sans); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; padding:.6rem .4rem; text-decoration:underline; text-underline-offset:4px}
@@ -376,6 +381,7 @@ footer small a{color:var(--sand)}
 </div>
 
 <div class="overlay" id="menu" hidden>
+  <a class="homepage" href="https://drpnvasist.com/">Visit homepage <span class="arrow"></span></a>
   <button class="pill close" id="menuClose">Close</button>
   <ol>
     <li><a href="#commitments"><small>01</small>Four commitments</a></li>
@@ -417,7 +423,7 @@ footer small a{color:var(--sand)}
     <div class="sec-head split">
       <div style="display:grid;gap:1.1rem">
         <p class="eyebrow">01 · Common ground</p>
-        <h2 class="statement">Publishers word their policies differently, but the same <em>four commitments</em> appear in all of them.</h2>
+        <h2 class="statement">Publishers word their policies differently, but the same <em>four commitments</em> appear in most of them.</h2>
       </div>
       <p class="lede">Choose a commitment to see what it asks of you. Scholars still ask the questions, own the choices and stand behind the claims.</p>
     </div>
@@ -455,7 +461,7 @@ footer small a{color:var(--sand)}
         <p class="eyebrow">03 · Levels of use</p>
         <h2 class="statement">The level of use matters more than the tool. Framing, interpretation and contribution <em>remain human</em>.</h2>
       </div>
-      <p class="lede">There are three roles a system can play. Journals draw the line at the third, because the link between the author and the claim is broken.</p>
+      <p class="lede">There are three roles a system can play. Journals tend to draw the line at the third, because the link between the author and the claim is broken.</p>
     </div>
     <div class="levels">
       <article class="level ok"><span class="status">Encouraged</span><h3>Copy editor</h3><p>Improves expression: clarity, tone, consistent terminology. The ideas, claims and structure remain yours, and every change can be reviewed line by line.</p></article>
@@ -596,7 +602,7 @@ footer small a{color:var(--sand)}
         <dt>Good faith</dt><dd>Policies assume honesty. That may not be enough on its own, which is the case for training, review protocols and audits.</dd>
       </dl></div></details>
       <details><summary><b>Bias</b><span>What the model has read shapes what it returns.</span></summary><div class="inner"><dl>
-        <dt>Opaque training data</dt><dd>We rarely know what the model has read, so we cannot judge how far its answers apply.</dd>
+        <dt>Opaque training data</dt><dd>We rarely know what the model has read, so it is hard to judge how far its answers apply.</dd>
         <dt>Dominant methods set the standard</dt><dd>Mainstream venues and English-language work are over-weighted. A naive search on gig-platform governance, for example, can favour fairness metrics and sideline labour studies and Global South scholarship.</dd>
         <dt>Pluralism narrows</dt><dd>Minority views drop out of view. Search beyond top venues and beyond English, and rotate the lenses you ask the tool to apply.</dd>
       </dl></div></details>
@@ -631,7 +637,7 @@ footer small a{color:var(--sand)}
       <h2 class="statement">If you take five habits away, <em>let them be these</em>.</h2>
     </div>
     <ol class="principles" style="list-style:none;padding:0">
-      <li><span class="n">01</span><b>Own every claim</b><p>Accountability cannot be delegated. A tool cannot be listed as an author.</p></li>
+      <li><span class="n">01</span><b>Own every claim</b><p>Accountability stays with you. Most policies do not allow a tool to be listed as an author.</p></li>
       <li><span class="n">02</span><b>Disclose what you used</b><p>Plainly and specifically: tool, purpose and oversight.</p></li>
       <li><span class="n">03</span><b>Keep the record</b><p>So that your process can be audited by someone else.</p></li>
       <li><span class="n">04</span><b>Verify before you <em>trust</em></b><p>Especially references, quotations, numbers and code.</p></li>
@@ -686,7 +692,7 @@ footer small a{color:var(--sand)}
       <p>This website was created using AI, and AI can make mistakes. Verify anything you rely on against the original sources and your target journal's current policy. AI policies change faster than any guide can be updated, so treat this as a map, not a rulebook.</p>
     </div>
     <div class="footer-row">
-      <span class="wm">Beyond the Prompt</span>
+      <div class="footer-brand"><span class="wm">Beyond the Prompt</span><a class="home-link" href="https://drpnvasist.com/">Visit homepage <span class="arrow"></span></a></div>
       <small>Photographs from Unsplash, used under the Unsplash License: Thomas Hoang, Vishnu Prasad, Louie Cepeda, Deliberate Directions, Anjith Paul and Denise Leisner.</small>
     </div>
   </div>
@@ -708,15 +714,15 @@ footer small a{color:var(--sand)}
 
   /* ---------- commitments ---------- */
   const C={
-    accountable:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Authors are <em>accountable</em>.</h3><p class="lede">Authorship is not credit for contributing words. It is acceptance of accountability, and a system cannot accept accountability. No publisher allows an AI system to be listed as an author.</p></div>
+    accountable:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Authors are <em>accountable</em>.</h3><p class="lede">Authorship is not credit for contributing words. It is acceptance of accountability, and a system cannot accept accountability. Publishers generally do not allow an AI system to be listed as an author.</p></div>
       <div class="body"><div class="pairs"><div class="box"><h4>A tool may</h4>${li(['Draft','Summarise','Translate','Suggest'])}</div><div class="box"><h4>Only an author can</h4>${li(['Answer for the work','Approve the final version','Respond after publication','Own the claims'])}</div></div>
-      <p class="note">Saying that the tool produced it is never a defence. Editors hold authors accountable for AI-generated mistakes.</p></div></div>`,
-    disclosed:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Use must be <em>disclosed</em>.</h3><p class="lede">Say what you used and how you used it. A good test: would a reader who knew what you did feel misled by its absence?</p></div>
+      <p class="note">Saying that the tool produced it is unlikely to be accepted as a defence. Editors generally hold authors accountable for AI-generated mistakes.</p></div></div>`,
+    disclosed:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Use should be <em>disclosed</em>.</h3><p class="lede">Say what you used and how you used it. A good test: would a reader who knew what you did feel misled by its absence?</p></div>
       <div class="body"><div class="pairs"><div class="box"><h4>Assistive: often outside the rule</h4>${li(['Spelling and grammar','Punctuation','Reference formatting'])}</div><div class="box"><h4>Generative: disclose it</h4>${li(['Producing or restructuring text','Generating ideas or analysis','Creating images or figures'])}</div></div>
       <div class="pairs"><div class="box"><h4>What to disclose</h4>${li(['<b>Which tool:</b> name and version','<b>What purpose:</b> searching, drafting, analysis, editing','<b>What oversight:</b> how you checked the output'])}</div><div class="box"><h4>Where it appears</h4>${li(['<b>Methods section:</b> visible to reviewers and readers','<b>Declaration statement:</b> published with the article','<b>Cover letter and checklist:</b> seen by editors','<b>Reference list:</b> where the journal asks'])}</div></div>
       <p class="note">Some venues ask you to declare even language editing. Check your target journal, and when in doubt, disclose.</p></div></div>`,
-    verified:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Outputs must be <em>verified</em>.</h3><p class="lede">These systems produce text that sounds right whether or not it is right. They invent references that look real and summarise papers they have not read.</p></div>
-      <div class="body"><div class="pairs"><div class="box"><h4>Verify before you rely</h4>${li(['References','Quotations','Numbers','Code'])}</div><div class="box"><h4>The rule</h4><p>If you cannot trace a claim to a source you have actually read, it does not go in.</p></div></div>
+    verified:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Outputs should be <em>verified</em>.</h3><p class="lede">These systems produce text that sounds right whether or not it is right. They invent references that look real and summarise papers they have not read.</p></div>
+      <div class="body"><div class="pairs"><div class="box"><h4>Verify before you rely</h4>${li(['References','Quotations','Numbers','Code'])}</div><div class="box"><h4>The rule</h4><p>If you cannot trace a claim to a source you have actually read, it should not go in.</p></div></div>
       <p class="note">Transparency says where AI entered the work. Provenance keeps the prompts, versions and logs. Verification checks claims, citations and code against the original.</p></div></div>`,
     confidential:`<div class="commit"><div style="display:grid;gap:1rem"><h3>Unpublished work stays <em>confidential</em>.</h3><p class="lede">This is the commitment scholars most often overlook. Treat any upload as a disclosure, and ask who else could read it.</p></div>
       <div class="body"><div class="pairs"><div class="box"><h4>As a reviewer</h4><p>A manuscript under review was entrusted to you. Pasting it, or even your notes on it, into a public AI tool can expose it in ways neither you nor the journal can control.</p></div><div class="box"><h4>As a researcher</h4><p>Interview transcripts and open responses may contain identifying detail. Ethics approval rarely covers sending them to a commercial system.</p></div></div>
@@ -740,7 +746,7 @@ footer small a{color:var(--sand)}
        ${card('Interviewer','Questions you and draws out your thinking.','For big ideas, you stay the key ideator and the model pulls the ideas out of you.')}
        ${card('Actor','Plays a consumer to suggest interview ideas.','Use its answers to draft questions, then ask real people. The model is not a stand-in for participants.')}</div>
        <p class="rule">The model helps you think. You decide which ideas matter, and you test them with real people.</p>`,},
-    {id:'literature',t:'Literature',lead:'The literature review is where the evidence of failure is most concrete. Language models have knowledge cutoffs, cannot see paywalled content and are not fact-checkers. Their maps are not verdicts.',
+    {id:'literature',t:'Literature',lead:'The literature review is where the evidence of failure is most concrete. Language models have knowledge cutoffs, often cannot see paywalled content, and are not designed as fact-checkers. Their maps are not verdicts.',
      h:['Mapping an unfamiliar field','Triage, with links to sources','Spotting adjacent literatures'],
      g:['References that do not exist','Summaries with no theory or critique','Misreading the paper summarised'],
      s:['Reading the primary text','Judging which tension matters','Writing the integrative argument'],
@@ -760,7 +766,7 @@ footer small a{color:var(--sand)}
        ${card('Define the construct yourself','Naming it in the prompt is not enough. A prompt about concern for food safety can end up measuring general disgust.')}
        ${card('Pilot the interviewer','An AI interviewer may stray from its instructions in a long conversation, or follow a participant off topic.')}
        ${card('Describe the AI in consent','Participants should know what role an AI system plays in the study.')}</div>`,},
-    {id:'data',t:'Data',lead:'Data is where the most serious line is drawn. Synthetic interview answers can sound entirely real, in the right professional language, and that is exactly the risk.',
+    {id:'data',t:'Data',lead:'Data is where many policies draw their firmest line. Synthetic interview answers can sound entirely real, in the right professional language, and that is exactly the risk.',
      h:['Transcription and anonymisation','Cleaning and integrity checks','Structured interviews at scale'],
      g:['Synthetic voices with no texture','Outliers silenced, stereotypes repeated','Real and synthetic data mixed'],
      s:['Access to real participants','Theoretical sampling','The line between real and synthetic'],
@@ -780,7 +786,7 @@ footer small a{color:var(--sand)}
        ${card('Analyse outside the model','Extract the code, even when it ran, and re-run it in R, Python, SPSS or Stata.','','04')}</div>
        <div class="cards">
        ${card('Researcher degrees of freedom','Wording, examples, temperature and post-processing are all analytic decisions. Log every setting and pre-register the protocol and validation sample.','Where a model does not let you fix temperature, fix the model version and every setting it allows, and code the data more than once to see how much scores vary.')}
-       ${card('Check the defaults','Model-written code for a one-sample t-test can call a function that defaults to a two-tailed test, which may not be the test the study needs.','Uploaded data in chat platforms are often kept only for the session, so do not run confirmatory analyses there.')}
+       ${card('Check the defaults','Model-written code for a one-sample t-test can call a function that defaults to a two-tailed test, which may not be the test the study needs.','Uploaded data in chat platforms are often kept only for the session, so avoid running confirmatory analyses there.')}
        ${card('AI-generated papers','A system that searched for shocks, runs the tests and writes up whatever is significant can produce professional papers with spurious results.','When searching is almost free and the rule is to write up whatever is significant, a significant result says very little.')}</div>`,},
     {id:'writing',t:'Writing',lead:'Writing is the easiest place to start using these tools, and a place where small errors slip in. Your own voice should come through. Whatever the tool did, you answer for every sentence.',
      h:['Clarity and tone','Support for non-native writers','Consistent terminology'],
@@ -793,7 +799,7 @@ footer small a{color:var(--sand)}
        <h4>Images and figures</h4><div class="cards">
        ${card('Explanatory images','Flow charts, timelines and workflow diagrams: AI may help, because they explain a process and do not claim to be evidence.')}
        ${card('Data visualisations','Only if the chart comes directly from your data and the method is reproducible and reported.')}
-       ${card('Primary research images','Never create or alter an image that stands for something you observed, such as scans, blots or microscopy.')}</div>`,},
+       ${card('Primary research images','Do not create or alter an image that stands for something you observed, such as scans, blots or microscopy.')}</div>`,},
     {id:'submission',t:'Submission',lead:'The same workflow can be acceptable at one venue, acceptable with conditions at another, and restricted at a third. Read the target journal’s rule before you start, not after you have finished.',
      h:['Language polishing and basic editing (widely permitted)','Literature support, drafting, coding and analysis, if declared and verified'],
      g:['Disclosure only in the cover letter, invisible to reviewers','Vague statements that name no tool or purpose','Relying on last year’s policy'],
@@ -803,7 +809,7 @@ footer small a{color:var(--sand)}
        ${card('With conditions','Literature support, drafting, coding and analysis, declared and verified.')}
        ${card('Restricted','AI as an author, and AI reading unpublished manuscripts.')}</div>
        <p><button class="linkish" type="button" data-go-tool="checklist">Open the submission checklist</button></p>`,},
-    {id:'review',t:'Review',lead:'Peer review is where the system is under most strain, and where the journals agree most strongly. Every recommendation needs a named person who answers for it.',
+    {id:'review',t:'Review',lead:'Peer review is where the system is under most strain, and where policies tend to agree most strongly. Each recommendation should have a named person who answers for it.',
      h:['Assistant-prepared summaries and method checklists, where the journal allows','Suggestions to make a review clearer','Light language refinement, disclosed to the editor'],
      g:['Uploading a confidential manuscript','Shallow understanding, factual errors and homogenised comments','Confident critiques of methods the study did not use'],
      s:['Reading the manuscript','Judging its contribution','The recommendation itself'],
@@ -844,10 +850,10 @@ footer small a{color:var(--sand)}
     {k:'refs',l:'Formatting references',tag:'Usually not',cls:'',h:'Usually outside the disclosure rule',p:'Reference managers and formatting tools are generally treated as assistive. You are still responsible for every reference being real and correct.',d:['Check each formatted reference against its source']},
     {k:'rewrite',l:'Rewriting or restructuring my sentences',tag:'Disclose',cls:'go',h:'Disclose it',p:'Once a tool makes substantive changes to sentence structure or organisation, the expectation is that you declare it.',d:['Name the tool and version','State that it was used for editing, and its scope','Keep a before-and-after or tracked-changes file']},
     {k:'gen',l:'Generating text, ideas or analysis',tag:'Disclose',cls:'go',h:'Disclose, and verify every output',p:'Generative use should be disclosed. Where AI materially contributed to analysis or evidence, provide records that let others reproduce the workflow.',d:['Name the tool and version','State the purpose and the stage of research','Describe how you checked the output','Keep prompts and settings in your use log']},
-    {k:'lit',l:'Searching or summarising literature',tag:'Disclose',cls:'go',h:'Disclose, and read the originals',p:'Literature support is usually allowed if declared and verified. Summaries must be checked against the papers themselves, and references can be fabricated.',d:['Read every source you cite','Archive prompts and retrieval logs','Say in your methods how the tool shaped the search']},
+    {k:'lit',l:'Searching or summarising literature',tag:'Disclose',cls:'go',h:'Disclose, and read the originals',p:'Literature support is usually allowed if declared and verified. Summaries should be checked against the papers themselves, and references can be fabricated.',d:['Read every source you cite','Archive prompts and retrieval logs','Say in your methods how the tool shaped the search']},
     {k:'code',l:'Writing code or running analysis',tag:'Disclose',cls:'go',h:'Disclose, and re-run outside the chat',p:'Coding and analysis help is usually allowed with declaration and verification. Do not run confirmatory analyses inside a chat platform.',d:['Re-run extracted code in R, Python, SPSS or Stata','Check defaults such as one- versus two-tailed tests','Log model version and settings']},
-    {k:'img',l:'Creating images or figures',tag:'Depends',cls:'',h:'It depends on what the image claims',p:'Explanatory diagrams may be acceptable with disclosure. Data visualisations must come directly from your data. Primary research images must never be generated or altered.',d:['Disclose any AI-assisted figure','Never alter scans, blots, microscopy or similar evidence']},
-    {k:'review',l:'Helping me review someone else’s manuscript',tag:'Stop',cls:'stop',h:'Generally not permitted',p:'Some journals prohibit AI in drafting or assisting reviews, and every journal treats manuscripts as confidential. Some allow light language refinement, disclosed to the editor.',d:['Never upload a manuscript or your notes on it','Read the journal’s reviewer guidelines','If language help is allowed, tell the editor']}
+    {k:'img',l:'Creating images or figures',tag:'Depends',cls:'',h:'It depends on what the image claims',p:'Explanatory diagrams may be acceptable with disclosure. Data visualisations should come directly from your data. Primary research images should not be generated or altered.',d:['Disclose any AI-assisted figure','Do not alter scans, blots, microscopy or similar evidence']},
+    {k:'review',l:'Helping me review someone else’s manuscript',tag:'Stop',cls:'stop',h:'Generally not permitted',p:'Some journals prohibit AI in drafting or assisting reviews, and journals generally treat manuscripts as confidential. Some allow light language refinement, disclosed to the editor.',d:['Do not upload a manuscript or your notes on it to a public AI tool','Read the journal’s reviewer guidelines','If language help is allowed, tell the editor']}
   ];
   const opts=$('#opts'), verdict=$('#verdict');
   opts.innerHTML=O.map(o=>`<button class="opt" type="button" aria-pressed="false" data-k="${o.k}" id="op-${o.k}">${o.l}</button>`).join('');
@@ -871,10 +877,10 @@ footer small a{color:var(--sand)}
   /* ---------- guided tour ---------- */
   const T=[
     {sel:'#heroCtas', h:'Welcome', p:'This guide shows how to use AI ethically at every stage of doctoral research, based on what publishers and journals currently ask. The tour takes about two minutes. You can end it at any time with Esc.'},
-    {sel:'#menuBtn', h:'Jump anywhere', p:'Open the menu to go straight to any section, from the four commitments to the full list of sources.'},
-    {sel:'#commitTabs', h:'Start with the four commitments', p:'Every publisher asks for the same four things. Click a tab to see what being accountable, disclosing, verifying and keeping work confidential mean in practice.'},
+    {sel:'#menuBtn', h:'Jump anywhere', p:'Open the menu to go straight to any section, from the four commitments to the full list of sources. It also has a link to visit the homepage.'},
+    {sel:'#commitTabs', h:'Start with the four commitments', p:'Most publishers ask for the same four things. Click a tab to see what being accountable, disclosing, verifying and keeping work confidential mean in practice.'},
     {sel:'#track', before:()=>showS(cur,false), h:'Find your stage', p:'This is the heart of the guide. Click the stage you are at, from Idea to Review. Stages you have opened are marked with a dot, so you can see where you have been.'},
-    {sel:'#stagePanel .hgs', h:'Read each stage in three parts', p:'Each stage answers the same three questions: what the tool helps with, what goes wrong, and what must stay with you. Practical habits and sources follow below.'},
+    {sel:'#stagePanel .hgs', h:'Read each stage in three parts', p:'Each stage answers the same three questions: what the tool helps with, what goes wrong, and what should stay with you. Practical habits follow below.'},
     {sel:'#stagePanel .panel-nav', h:'Walk the journey in order', p:'Use these buttons to move to the previous or next stage, so you can read the whole journey from start to finish.'},
     {sel:'#toolTabs', before:()=>showT('disclose'), h:'Use the toolkit', p:'Four practical tools: a disclosure helper, a use-log template you can copy, a submission checklist, and questions for reviewing AI-assisted work.'},
     {sel:'#opts', before:()=>showT('disclose'), h:'Not sure whether to disclose?', p:'Choose what the tool did, and the guide tells you whether to disclose it and what to record. Journals differ, so always check your target journal too.'},
