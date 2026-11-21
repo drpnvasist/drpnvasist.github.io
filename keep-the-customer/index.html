@@ -76,6 +76,8 @@ em,.em{font-style:normal;font-weight:800;letter-spacing:-.01em}
 .pill.pink{background:var(--pink);color:var(--ink)}
 .pill.ghost{border-color:currentColor}
 .pill.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+a.pill{text-decoration:none;color:inherit}
+@media (max-width:400px){.acts{gap:6px}.pill{padding:0 10px}}
 .acts{display:flex;gap:8px}
 .steps{display:flex;gap:6px;list-style:none;min-width:0}
 .steps li{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 6px;border:1px solid color-mix(in srgb,currentColor 35%,transparent);border-radius:999px;font-size:13px;font-weight:700;letter-spacing:-.01em;white-space:nowrap;transition:background-color .5s var(--ease),color .5s var(--ease)}
@@ -428,7 +430,7 @@ function bar(label){
     return `<li class="${cls}" ${no===cur?'aria-current="step"':''}><span class="n">${no<cur?'&#10003;':no}</span><span class="t">${t}</span></li>`}).join('');
   return `<div class="tbar"><div class="pill brand"><span class="d"></span><span class="full">keep-the-customer</span><span class="md">.md</span></div>
    ${cur?`<ol class="steps" aria-label="Your journey">${steps}</ol>`:''}
-   <div class="acts">${label?`<button class="pill ghost" data-act="back">&larr; ${label}</button>`:''}${cur?`<button class="pill pink" data-act="help">How to play</button>`:''}</div></div>`;
+   <div class="acts">${label?`<button class="pill ghost" data-act="back">&larr; ${label}</button>`:''}${cur?`<button class="pill pink" data-act="help">How to play</button>`:''}<a class="pill ghost" href="https://drpnvasist.com" target="_top">Home</a></div></div>`;
 }
 function nowText(m,preview){
   return `${preview?'If you confirm these choices. ':'Your shop right now. '}Visibility: ${METER.vis.st(m.vis).toLowerCase()}. Delivery: ${METER.rel.st(m.rel).toLowerCase()}. Loyalty: ${METER.loy.st(m.loy).toLowerCase()}.`;
