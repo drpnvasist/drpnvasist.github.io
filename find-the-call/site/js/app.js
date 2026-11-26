@@ -88,7 +88,7 @@
     <div class="entry__main"><h3 class="entry__title"><a class="entry__link" href="${esc(h.url)}" target="_blank" rel="noopener" title="${esc(h.note)}">${esc(j.title)}<span class="ext" aria-hidden="true"> ↗</span><span class="sr"> (journal homepage, opens in a new tab)</span></a></h3><p class="entry__pub">${esc(j.publisher)}</p>${extra}</div>
     <div class="entry__side">
       <div class="entry__tags"><span class="pill pill--${j.rating === "A*" ? "Astar" : esc(j.rating)}">${esc(j.rating)}</span><span class="tag">${j.for} · ${esc(FOR[j.for] || "")}</span></div>
-      ${j.cfps.length ? `<ul class="calls">${j.cfps.map(callHtml).join("")}</ul>` : `<p class="entry__none">No call listed here. Check the <a href="${esc(h.url)}" target="_blank" rel="noopener">journal's homepage</a>.</p>`}
+      ${j.cfps.length ? `<ul class="calls">${j.cfps.map((c) => callHtml(c)).join("")}</ul>` : `<p class="entry__none">No call listed here. Check the <a href="${esc(h.url)}" target="_blank" rel="noopener">journal's homepage</a>.</p>`}
     </div></article>`;
   };
 
@@ -101,7 +101,7 @@
   function render() {
     const list = filtered();
     $("count").textContent = `${list.length.toLocaleString()} journal${list.length === 1 ? "" : "s"}`;
-    rows.innerHTML = list.slice(0, shown).map(entryHtml).join("");
+    rows.innerHTML = list.slice(0, shown).map((j) => entryHtml(j)).join("");
     rows.querySelectorAll(".entry").forEach((el) => (io ? io.observe(el) : el.classList.add("is-in")));
     updateCounts();
     const none = !list.length, only = $("onlycfp").checked;
