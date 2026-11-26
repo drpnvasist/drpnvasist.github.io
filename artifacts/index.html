@@ -131,14 +131,28 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
   <ul class="grid">
     <!--
       To add an artifact: put its page in a folder at the site root
-      (for example /my-new-page/index.html), save two photos in
-      /artifacts/img/ (a main one about 720px wide and a square one about
-      420px), then copy one <li>
+      (for example /my-new-page/index.html), save its image(s) in
+      /artifacts/img/ (either two photos, a main one about 720px wide and a
+      square one about 420px, or one picture of 960 x 816 shown with
+      class="plain"), then copy one <li>
       block below and change the link, image, date, title and line.
       Keep target="_blank" rel="noopener" on the link so it opens in a
       new tab.
       Newest first.
     -->
+    <li>
+      <a class="tile" href="/find-the-call/" target="_blank" rel="noopener">
+        <span class="tile-media"><span class="tile-fig">
+          <img class="plain" src="img/ftc-disc.jpg" alt="" width="960" height="816">
+        </span></span>
+        <span class="tile-body">
+          <span class="tile-date">Nov 2026 · General</span>
+          <span class="tile-title">Find the Call</span>
+          <span class="tile-line">Open calls for papers across ABDC-ranked journals, filtered by rating and field.</span>
+          <span class="tile-go">Open <span class="arr" aria-hidden="true"></span></span>
+        </span>
+      </a>
+    </li>
     <li>
       <a class="tile" href="/keep-the-customer/" target="_blank" rel="noopener">
         <span class="tile-media"><span class="tile-fig">
